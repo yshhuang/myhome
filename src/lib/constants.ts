@@ -1,8 +1,8 @@
 export const LINKS = {
-  github: "https://github.com/Ladvace",
-  linkedin: "https://www.linkedin.com/in/gianmarco-cavallo/",
-  medium: "https://ladvace.medium.com/",
-  discord: "https://discordapp.com/users/163300027618295808",
+  github: "https://github.com/yshhuang/",
+  linkedin: "https://www.linkedin.com/in/yshhuang/",
+  zhihu: "https://www.zhihu.com/people/huangyongsheng/",
+  jianshu: "https://www.jianshu.com/u/dc14733da85f",
   dribble: "https://dribbble.com/Ladvace_Jace",
 };
 
