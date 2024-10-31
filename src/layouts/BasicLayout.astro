@@ -21,63 +21,31 @@ const image =
     ? `${Astro.url.origin}/globe_preview.webp"`
     : `${Astro.url.origin}/og-image.png`;
 
-const schema =
-  page !== "blog"
-    ? {
-        "@context": "http://schema.org",
-        "@type": "Person",
-        name: "Gianmarco",
-        url: "https://gianmarco.xyz",
-        sameAs: [
-          "https://www.linkedin.com/in/gianmarco-cavallo",
-          "https://github.com/Ladvace",
-        ],
-        image: "https://gianmarco.xyz/og-image.png",
-        jobTitle: "Freelance Frontend Developer",
-        worksFor: {
-          "@type": "Organization",
-          name: "Self-Employed",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Italy",
-            addressCountry: "IT",
-          },
-        },
-        nationality: {
-          "@type": "Country",
-          name: "Italy",
-        },
-      }
-    : {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": `https://gianmarco.xyz/blog/${slug}`,
-        },
-        headline: frontmatter?.title || title,
-        description: frontmatter?.description || title,
-        image: "https://gianmarco.xyz/og-image.png", //TODO: dynamic
-        author: {
-          "@type": "Person",
-          name: "Gianmarco",
-          url: "https://gianmarco.xyz",
-          sameAs: [
-            "https://www.linkedin.com/in/gianmarco-cavallo",
-            "https://github.com/Ladvace",
-          ],
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Gianmarco",
-          logo: {
-            "@type": "ImageObject",
-            url: "https://gianmarco.xyz/og-image.png",
-          },
-        },
-        datePublished: frontmatter?.pubDate || new Date().toISOString(),
-        dateModified: frontmatter?.pubDate || new Date().toISOString(),
-      };
+const schema = {
+  "@context": "http://schema.org",
+  "@type": "Person",
+  name: "yshhuang",
+  url: "https://yshhuang.top",
+  sameAs: [
+    "https://www.linkedin.com/in/yshhuang",
+    "https://github.com/yshhuang",
+  ],
+  image: "https://yshhuang.top/og-image.png",
+  jobTitle: "Freelance Full-Stack Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Self-Employed",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "BeiJing",
+      addressCountry: "China",
+    },
+  },
+  nationality: {
+    "@type": "Country",
+    name: "China",
+  },
+};
 ---
 
 <!doctype html>
@@ -97,7 +65,7 @@ const schema =
     <meta property="og:url" content={Astro.url.origin} />
     <meta
       property="og:image"
-      content={image || "https://gianmarco.xyz/og-image.png"}
+      content={image || "https://yshhuang.top/og-image.png"}
     />
     <!-- Basic Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -105,11 +73,15 @@ const schema =
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
-      content={image || "https://gianmarco.xyz/og-image.png"}
+      content={image || "https://yshhuang.top/og-image.png"}
     />
 
     <link rel="preconnect" href="https://cdn.fontshare.com" />
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+    />
   </head>
   <body
     class="bg-darkslate-700 md:h-screen flex flex-col justify-center items-center"
